@@ -56,7 +56,7 @@ const Payment = () => {
           card: elements.getElement(CardElement),
         },
       });
-      console.log(paymentIntent);
+      // console.log(paymentIntent);
 
       // 3. after the confirmation ---> order firestore database Save, clear basket
 
@@ -76,7 +76,7 @@ const Payment = () => {
       setProcessing(false);
       navigate("/orders", { state: { msg: "You have placed new order" } });
     } catch (error) {
-      console.log(error);
+      console.log("can't fetch", error);
       setProcessing(false);
     }
   };

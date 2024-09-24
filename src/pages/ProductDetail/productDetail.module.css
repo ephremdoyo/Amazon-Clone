@@ -42,7 +42,7 @@
   position: relative;
   margin-top: 30px;
   display: grid;
-  grid-template-columns: repeat(auto-fill,minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fill,minmax(290px, 1fr));
   place-items: center;
   width: 85%;
   margin: auto;
@@ -58,9 +58,6 @@
   margin: auto;
   
 }
-/* .card_container:hover + .button{
-  display: block;
-} */
 
 .product_flexed h3 {
   padding: 20px 0px;

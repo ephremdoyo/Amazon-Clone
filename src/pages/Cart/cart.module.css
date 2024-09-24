@@ -69,6 +69,7 @@ margin: 20px auto;
     gap: 20px;
 }
 
+
 @media screen and (max-width: 968px) {
     .container {
         flex-direction: column;
