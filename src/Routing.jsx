@@ -11,6 +11,7 @@ import ProductDetail from "./pages/ProductDetail/ProductDetail";
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
+import LayOut from "./components/LayOut/LayOut";
 
 const stripePromise = loadStripe(
   "pk_test_51Q1TSRGzcz8bMmnvLq7uz9hGbuePLLq6WiaR9xOvPknldjWxjDsJiAyRRt1D5JWA5Cn5B9K85U16G8zF5IQGktMB00XWuCEML7"
@@ -20,7 +21,7 @@ const Routing = () => {
   return (
     // <Router>
     <Routes>
-      <Route path="/" element={<SharedLayOut />}>
+    
         <Route path="/" element={<Landing />} />
         <Route
           path="/payments"
@@ -51,7 +52,7 @@ const Routing = () => {
         <Route path="/category/:categoryName" element={<Results />} />
         <Route path="/products/:productID" element={<ProductDetail />} />
         <Route path="/cart" element={<Cart />} />
-      </Route>
+
       <Route path="/auth" element={<Auth />} />
     </Routes>
     // </Router>

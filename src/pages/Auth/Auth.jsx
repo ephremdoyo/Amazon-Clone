@@ -11,6 +11,7 @@ import { DataContext } from "../../components/DataProvider/DataProvider";
 import { Type } from "../../Utility/action.type";
 import Loader from "../../components/Loader/Loader";
 import { ClipLoader } from "react-spinners";
+import LayOut from "../../components/LayOut/LayOut";
 
 const Auth = () => {
   const [email, setEmail] = useState("");
@@ -61,81 +62,84 @@ const Auth = () => {
   };
 
   return (
-    <section className={classes.login}>
-      <Link to="/">
-        <img src={Logo} alt="" />
-      </Link>
+    <LayOut>
+      {" "}
+      <section className={classes.login}>
+        <Link to="/">
+          <img src={Logo} alt="" />
+        </Link>
 
-      <div className={classes.login_container}>
-        <h1>Sign In</h1>
-        {navStateData?.state?.msg && (
-          <small
-            style={{
-              padding: "5px",
-              textAlign: "center",
-              color: "red",
-              fontWeight: "bold",
-            }}
-          >
-            {navStateData.state.msg}
-          </small>
-        )}
-        <form>
-          <div>
-            <label htmlFor="email">E-mail</label>
+        <div className={classes.login_container}>
+          <h1>Sign In</h1>
+          {navStateData?.state?.msg && (
+            <small
+              style={{
+                padding: "5px",
+                textAlign: "center",
+                color: "red",
+                fontWeight: "bold",
+              }}
+            >
+              {navStateData.state.msg}
+            </small>
+          )}
+          <form>
+            <div>
+              <label htmlFor="email">E-mail</label>
 
-            <input
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              type="email"
-              id="email"
-            />
-          </div>
-          <div>
-            <label htmlFor="Password">Password</label>
-            <input
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              type="password"
-              id="password"
-            />
-          </div>
+              <input
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                type="email"
+                id="email"
+              />
+            </div>
+            <div>
+              <label htmlFor="Password">Password</label>
+              <input
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                type="password"
+                id="password"
+              />
+            </div>
+            <button
+              type="submit"
+              onClick={authHandler}
+              name="signin"
+              className={classes.login_signInButton}
+            >
+              {Loading.signIn ? (
+                <ClipLoader color="#000" size={15} />
+              ) : (
+                " Sign In"
+              )}
+            </button>
+          </form>
+          <p>
+            By signing-in you agree to the AMAZON FAKE CLONE Conditions of Use &
+            Sale. Please see our Privacy Notice, our Cookies Notice and our
+            Interest-Based Ads Notice.
+          </p>
           <button
+            name="signup"
             type="submit"
             onClick={authHandler}
-            name="signin"
-            className={classes.login_signInButton}
+            className={classes.login_registerButton}
           >
-            {Loading.signIn ? (
+            {" "}
+            {Loading.signUP ? (
               <ClipLoader color="#000" size={15} />
             ) : (
-              " Sign In"
+              " Create your Amazon Account"
             )}
           </button>
-        </form>
-        <p>
-          By signing-in you agree to the AMAZON FAKE CLONE Conditions of Use &
-          Sale. Please see our Privacy Notice, our Cookies Notice and our
-          Interest-Based Ads Notice.
-        </p>
-        <button
-          name="signup"
-          type="submit"
-          onClick={authHandler}
-          className={classes.login_registerButton}
-        >
-          {" "}
-          {Loading.signUP ? (
-            <ClipLoader color="#000" size={15} />
-          ) : (
-            " Create your Amazon Account"
+          {error && (
+            <small style={{ paddingTop: "5px", color: "Red" }}>{error}</small>
           )}
-        </button>
-        {error && (
-          <small style={{ paddingTop: "5px", color: "Red" }}>{error}</small>
-        )}
-      </div>
-    </section>
+        </div>
+      </section>
+    </LayOut>
   );
 };
 

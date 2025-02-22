@@ -1,6 +1,6 @@
 
 import React from "react";
-import {FadeLoader} from "react-spinners";
+import {ClipLoader} from "react-spinners";
 
 const Loader = () => {
   return (
@@ -12,7 +12,14 @@ const Loader = () => {
         height: "50vh",
       }}
     >
-      <FadeLoader color="#FF8500" />
+    
+      <ClipLoader
+        color="#DF7921"
+        cssOverride={{}}
+        loading
+        size={40}
+        speedMultiplier={0.7}
+      />
     </div>
   );
 };

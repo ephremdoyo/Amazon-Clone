@@ -1,9 +1,12 @@
-// import React from "react";
+import React from "react";
+
+import Header from "../Header/Header";
 
 const LayOut = ({ children }) => {
   return (
     <div>
-           {children}
+      <Header />
+      {children}
     </div>
   );
 };

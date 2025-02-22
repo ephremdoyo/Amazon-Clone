@@ -3,6 +3,7 @@ import { db } from "../../Utility/firebase";
 import { DataContext } from "../../components/DataProvider/DataProvider";
 import classes from "./order.module.css";
 import ProductCard from "../../components/Product/ProductCard";
+import LayOut from "../../components/LayOut/LayOut";
 
 const Order = () => {
   const [{ user }, dispatch] = useContext(DataContext);
@@ -29,28 +30,30 @@ const Order = () => {
   }, [user]);
 
   return (
-    <section className={classes.container}>
-      <div className={classes.orders_container}>
-        <h2>Your Orders</h2>
-        {orders?.length == 0 && (
-          <div style={{ padding: "20px" }}>You don't Have Orders yet.</div>
-        )}
-        {/* ordered items */}
-        <div>
-          {orders?.map((eachOrder, i) => {
-            return (
-              <div key={i}>
-                <hr />
-                <p>OrderID: {eachOrder?.id}</p>
-                {eachOrder?.data?.basket?.map((order) => (
-                  <ProductCard flex={true} key={order.id} product={order} />
-                ))}
-              </div>
-            );
-          })}
+    <LayOut>
+      <section className={classes.container}>
+        <div className={classes.orders_container}>
+          <h2>Your Orders</h2>
+          {orders?.length == 0 && (
+            <div style={{ padding: "20px" }}>You don't Have Orders yet.</div>
+          )}
+          {/* ordered items */}
+          <div>
+            {orders?.map((eachOrder, i) => {
+              return (
+                <div key={i}>
+                  <hr />
+                  <p>OrderID: {eachOrder?.id}</p>
+                  {eachOrder?.data?.basket?.map((order) => (
+                    <ProductCard flex={true} key={order.id} product={order} />
+                  ))}
+                </div>
+              );
+            })}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </LayOut>
   );
 };
 

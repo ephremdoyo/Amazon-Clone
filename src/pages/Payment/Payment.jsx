@@ -13,6 +13,7 @@ import { ClipLoader } from "react-spinners";
 import { db } from "../../Utility/firebase";
 import { useNavigate } from "react-router-dom";
 import { Type } from "../../Utility/action.type";
+import LayOut from "../../components/LayOut/LayOut";
 
 const Payment = () => {
   const [{ user, basket }, dispatch] = useContext(DataContext);
@@ -82,7 +83,8 @@ const Payment = () => {
   };
 
   return (
-    <>
+    <LayOut>
+   
       {/* header  */}
       <div className={classes.payment_header}>Checkout ({totalItem}) items</div>
       {/* payment method  */}
@@ -140,7 +142,7 @@ const Payment = () => {
           </div>
         </div>
       </section>
-    </>
+    </LayOut>
   );
 };
 

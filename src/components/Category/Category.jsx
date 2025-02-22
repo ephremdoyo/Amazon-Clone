@@ -33,7 +33,7 @@ const Category = () => {
       ) : (
         <section className={classes.category_container}>
           {categoryInfo.map((singleInfo, i) => {
-            return <CategoryCard key={i} data={singleInfo} product={product}/>;
+            return <CategoryCard key={i} data={singleInfo} />;
           })}
         </section>
       )}

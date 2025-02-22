@@ -6,7 +6,6 @@ import { productUrl } from "../../API/EndPoints";
 import classes from "../../pages/ProductDetail/productDetail.module.css";
 import ProductCard from "../Product/ProductCard";
 
-
 const LowerPage = () => {
   const [product, setProduct] = useState([]);
   const [isLoading, setIsLoading] = useState(false);

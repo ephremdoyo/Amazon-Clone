@@ -31,12 +31,12 @@ const Results = () => {
 
   // .then((results) => results);
   return (
-    // <LayOut>
+    <LayOut>
     <>
       {isLoading ? (
         <Loader />
       ) : (
-        <section>
+        <>
           <h1 style={{ padding: "30px" }}>Results</h1>
           <p style={{ padding: "30px" }}>Category /{categoryName}</p>
           <hr />
@@ -45,10 +45,10 @@ const Results = () => {
               <ProductCard key={product.id} renderAdd={true} product={product} />
             ))}
           </div>
-        </section>
+        </>
       )}
     </>
-    // </LayOut>
+    </LayOut>
   );
 };
 

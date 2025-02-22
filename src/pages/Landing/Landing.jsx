@@ -6,13 +6,13 @@ import LowerPage from "../../components/LowerPage/LowerPage";
 
 const Home = () => {
   return (
-    <>
+ 
       <LayOut>
         <Carousel />
         <Category />
         <LowerPage />
       </LayOut>
-    </>
+    
   );
 };
 

@@ -8,7 +8,7 @@ const CarouselEffect = () => {
       <Carousel
         autoPlay={true}
         infiniteLoop={true}
-        showIndicator={false}
+        showIndicators={false}
         showThumbs={false}
       >
         {img.map((imageItemLink, i) => {

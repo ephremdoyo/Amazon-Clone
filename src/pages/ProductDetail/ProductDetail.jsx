@@ -4,6 +4,7 @@ import axios from "axios";
 import { productUrl } from "../../API/EndPoints";
 import ProductCard from "../../components/Product/ProductCard";
 import Loader from "../../components/Loader/Loader";
+import LayOut from "../../components/LayOut/LayOut";
 
 const ProductDetail = () => {
   const [product, setProduct] = useState({});
@@ -24,7 +25,7 @@ const ProductDetail = () => {
         setIsLoading(false);
       });
   }, []);
-  return <>{isLoading ? <Loader /> : <ProductCard product={product} flex={true} renderAdd={true} renderDesc={true} />}</>;
+  return <LayOut>{isLoading ? <Loader /> : <ProductCard product={product} flex={true} renderAdd={true} renderDesc={true} />}</LayOut>;
 };
 
 export default ProductDetail;

@@ -81,6 +81,16 @@
   width: 500px !important;
   height: auto;
 }
+
+
+
+.button {
+  position: absolute;
+  bottom: 0px;
+}
+
+
+
 @media screen and (max-width: 768px) {
   .product_flexed {
     display: flex;
@@ -94,3 +104,5 @@
     width: 95%;
   }
 }
+
+
