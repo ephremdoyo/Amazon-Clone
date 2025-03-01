@@ -9,9 +9,8 @@ import {
 } from "firebase/auth";
 import { DataContext } from "../../components/DataProvider/DataProvider";
 import { Type } from "../../Utility/action.type";
-import Loader from "../../components/Loader/Loader";
 import { ClipLoader } from "react-spinners";
-import LayOut from "../../components/LayOut/LayOut";
+
 
 const Auth = () => {
   const [email, setEmail] = useState("");
@@ -25,8 +24,7 @@ const Auth = () => {
   // console.log(user);
   const authHandler = async (e) => {
     e.preventDefault();
-    console.log("hi");
-    // console.log(e.target.name);
+ 
     if (e.target.name == "signin") {
       // firebase auth
       setLoading({ ...Loading, signIn: true });
@@ -62,8 +60,8 @@ const Auth = () => {
   };
 
   return (
-    <LayOut>
-      {" "}
+    <>
+      
       <section className={classes.login}>
         <Link to="/">
           <img src={Logo} alt="" />
@@ -127,7 +125,7 @@ const Auth = () => {
             onClick={authHandler}
             className={classes.login_registerButton}
           >
-            {" "}
+            
             {Loading.signUP ? (
               <ClipLoader color="#000" size={15} />
             ) : (
@@ -139,7 +137,7 @@ const Auth = () => {
           )}
         </div>
       </section>
-    </LayOut>
+    </>
   );
 };
 
