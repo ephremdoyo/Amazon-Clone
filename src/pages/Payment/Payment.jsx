@@ -75,7 +75,7 @@ const Payment = () => {
       dispatch({ type: Type.EMPTY_BASKET });
 
       setProcessing(false);
-      navigate("/orders", { state: { msg: "You have placed new order" } });
+      navigate("/orders", {replace: true, state: { msg: "You have placed new order" } });
     } catch (error) {
       console.log("can't fetch", error);
       setProcessing(false);
@@ -147,3 +147,17 @@ const Payment = () => {
 };
 
 export default Payment;
+
+
+
+
+
+// Go to Firebase Console → Firestore Database → Rules and make sure your rules allow access. If you're testing, you can temporarily set them to:
+// rules_version = '2';
+// service cloud.firestore {
+//   match /databases/{database}/documents {
+//     match /{document=**} {
+//       allow read, write: if true;
+//     }
+//   }
+// }
